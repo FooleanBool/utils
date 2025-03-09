@@ -19,15 +19,8 @@ This script providesbash autocompletion functionality for interacting with your 
    wget https://raw.githubusercontent.com/<username>/ollama-bash-completion/master/dxo_completion_script.sh -O ~/.dxo_completion_script.sh
    ```
 
-2. **Make it Executable:**
 
-   Ensure the script is executable by running:
-
-   ```bash
-   chmod +x ~/.dxo_completion_script.sh
-   ```
-
-3. **Source the Script (temporarily):**
+2. **Source the Script (temporarily):**
 
    To temporarily load the completion script into your current shell, run:
 
@@ -35,7 +28,7 @@ This script providesbash autocompletion functionality for interacting with your 
    source ~/.dxo_completion_script.sh
    ```
 
-4. **Add to Bashrc (permanently):**
+3. **Add to Bashrc (permanently):**
 
    To make the completion script available in every new terminal session, add it to your `~/.bashrc` file:
 
@@ -48,7 +41,7 @@ This script providesbash autocompletion functionality for interacting with your 
 
 Before using this script, ensure that you have a running Ollama instance on your host. This script is configured to watch for an alias (`dxo`) of the command `docker exec -it ollama ollama`.
 
-You can customize the Ollama instance or alias by modifying the following line in `~/.dxo_completion_script.sh`:
+You can customize the desired Ollama command or alias by modifying the following line in `~/.dxo_completion_script.sh`:
 
 ```bash
 command="ollama"
@@ -58,10 +51,10 @@ command="ollama"
 
 After installation and configuration, use this bash completion script as follows:
 
-1. Navigate to your Ollama instance's directory.
-2. Type the command prefix (`ollama`) followed by a space.
+1. Make sure you have a running ollama server.
+2. Type the command prefix (`ollama`) followed by a space, then the option you need - `ollama run`, `ollama show` etc.
 3. Press `<TAB>` for autocomplete suggestions (e.g., `ollama run <TAB>`).
-4. Enter the desired command argument and press `<ENTER>`.
+4. If there is a single match it will be inserted, if there are multiple matches, it will completed to the nearest character.
 
 Enjoy faster and easier interaction with your Ollama instance!
 
